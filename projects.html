@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Projects | Suraj Kora</title><meta name="description" content="Projects developed by Suraj Kora - Frontend, Full Stack and UI Design showcases."><meta property="og:title" content="Projects | Suraj Kora"><meta property="og:description" content="A collection of projects showcasing development skills and creativity."><meta property="og:type" content="website"><link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css"><script defer src="js/main.js"></script><script defer src="js/animations.js"></script></head><body><div id="particles"></div><header class="header"><nav class="navbar container"><a href="index.html" class="logo">
+Suraj<span>Kora</span>
+</a><ul class="nav-links"><li><a href="index.html">Home</a></li>
+<li><a href="index.html#about">About</a></li>
+<li><a href="skills.html">Skills</a></li>
+<li><a href="projects.html" class="active">Projects</a></li>
+<li><a href="contact.html">Contact</a></li></ul><div class="hamburger"><span></span>
+<span></span>
+<span></span>
+
+</div></nav></header><section class="container page-hero"><div class="section-title reveal"><h1>Featured Projects</h1><p>
+A collection of projects showcasing my learning journey,
+development skills and creativity.
+</p></div></section><section class="container"><div class="project-filters reveal"><button class="filter-btn active"
+data-filter="all">
+
+All
+
+</button><button class="filter-btn"
+data-filter="frontend">
+
+Frontend
+
+</button><button class="filter-btn"
+data-filter="fullstack">
+
+Full Stack
+
+</button><button class="filter-btn"
+data-filter="ui">
+
+UI Design
+
+</button></div><div class="projects-grid"><!-- Project 1 --><div class="project-card glass reveal"
+data-category="frontend"><img
+src="assets/images/project-1.svg"
+alt="Project">
+
+<div class="project-content"><span class="project-tag">
+Frontend
+</span><h3>
+Modern Portfolio Website
+</h3><p>A responsive developer portfolio featuring
+glassmorphism UI, smooth animations and
+modern design principles.
+
+</p><div class="project-buttons"><a href="#"
+class="btn btn-primary">
+
+Live Demo
+
+</a><a href="#"
+class="btn btn-secondary">
+
+GitHub
+
+</a></div></div></div><!-- Project 2 --><div class="project-card glass reveal"
+data-category="fullstack"><img
+src="assets/images/project-2.svg"
+alt="Project">
+
+<div class="project-content"><span class="project-tag">
+Full Stack
+</span><h3>
+Task Management App
+</h3><p>Full-stack productivity application with
+authentication, CRUD operations and
+database integration.
+
+</p><div class="project-buttons"><a href="#"
+class="btn btn-primary">
+
+Live Demo
+
+</a><a href="#"
+class="btn btn-secondary">
+
+GitHub
+
+</a></div></div></div><!-- Project 3 --><div class="project-card glass reveal"
+data-category="ui"><img
+src="assets/images/project-3.svg"
+alt="Project">
+
+<div class="project-content"><span class="project-tag">
+UI Design
+</span><h3>
+Landing Page Design
+</h3><p>Premium landing page concept focused on
+modern UX principles and conversion
+optimization.
+
+</p><div class="project-buttons"><a href="#"
+class="btn btn-primary">
+
+Preview
+
+</a><a href="#"
+class="btn btn-secondary">
+
+Details
+
+</a></div></div></div></div></section><footer class="footer"><p>
+© 2026 Suraj Kora. All Rights Reserved.
+</p></footer><script>
+
+const filterButtons =
+document.querySelectorAll(".filter-btn");
+
+const projects =
+document.querySelectorAll(".project-card");
+
+filterButtons.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+filterButtons.forEach(btn=>
+btn.classList.remove("active"));
+
+button.classList.add("active");
+
+const filter =
+button.dataset.filter;
+
+projects.forEach(project=>{
+
+if(
+filter === "all" ||
+project.dataset.category === filter
+){
+
+project.style.display = "block";
+
+}else{
+
+project.style.display = "none";
+
+}
+
+});
+
+});
+
+});
+
+</script></body>
+</html>

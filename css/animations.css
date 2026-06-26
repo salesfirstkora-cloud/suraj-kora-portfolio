@@ -1,0 +1,602 @@
+/* ==========================================
+PREMIUM ANIMATIONS
+========================================== */
+
+/* ==========================================
+GLOBAL TRANSITIONS
+========================================== */
+
+*{
+transition:
+background-color .3s ease,
+color .3s ease,
+border-color .3s ease,
+transform .35s ease;
+}
+
+/* ==========================================
+AURORA BACKGROUND
+========================================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+linear-gradient(
+-45deg,
+rgba(0,245,255,.08),
+rgba(139,92,246,.08),
+rgba(255,78,205,.08),
+rgba(0,245,255,.08)
+);
+
+background-size:
+400% 400%;
+
+animation:
+auroraMove 15s ease infinite;
+
+z-index:-3;
+
+}
+
+@keyframes auroraMove{
+
+0%{
+    background-position:0% 50%;
+}
+
+50%{
+    background-position:100% 50%;
+}
+
+100%{
+    background-position:0% 50%;
+}
+
+}
+
+/* ==========================================
+FLOATING SHAPES
+========================================== */
+
+.shape1{
+animation:
+floatBlob1 12s ease-in-out infinite;
+}
+
+.shape2{
+animation:
+floatBlob2 14s ease-in-out infinite;
+}
+
+.shape3{
+animation:
+floatBlob3 16s ease-in-out infinite;
+}
+
+@keyframes floatBlob1{
+
+0%,100%{
+    transform:
+    translateY(0px);
+}
+
+50%{
+    transform:
+    translateY(-60px);
+}
+
+}
+
+@keyframes floatBlob2{
+
+0%,100%{
+    transform:
+    translateX(0px);
+}
+
+50%{
+    transform:
+    translateX(-80px);
+}
+
+}
+
+@keyframes floatBlob3{
+
+0%,100%{
+    transform:
+    translateY(0px)
+    translateX(0px);
+}
+
+50%{
+    transform:
+    translateY(-40px)
+    translateX(40px);
+}
+
+}
+
+/* ==========================================
+HERO IMAGE FLOATING
+========================================== */
+
+.profile-card{
+
+animation:
+profileFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes profileFloat{
+
+0%,100%{
+
+    transform:
+    translateY(0px);
+}
+
+50%{
+
+    transform:
+    translateY(-18px);
+}
+
+}
+
+/* ==========================================
+PROFILE GLOW RING
+========================================== */
+
+.glow-ring{
+
+animation:
+pulseGlow 4s ease infinite;
+
+}
+
+@keyframes pulseGlow{
+
+0%,100%{
+
+    opacity:.5;
+    transform:scale(1);
+}
+
+50%{
+
+    opacity:1;
+    transform:scale(1.2);
+}
+
+}
+
+/* ==========================================
+SCROLL REVEAL
+========================================== */
+
+.reveal{
+
+opacity:0;
+
+transform:
+translateY(60px);
+
+transition:
+.8s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+/* ==========================================
+LEFT REVEAL
+========================================== */
+
+.reveal-left{
+
+opacity:0;
+
+transform:
+translateX(-80px);
+
+transition:
+.8s ease;
+
+}
+
+.reveal-left.active{
+
+opacity:1;
+
+transform:
+translateX(0);
+
+}
+
+/* ==========================================
+RIGHT REVEAL
+========================================== */
+
+.reveal-right{
+
+opacity:0;
+
+transform:
+translateX(80px);
+
+transition:
+.8s ease;
+
+}
+
+.reveal-right.active{
+
+opacity:1;
+
+transform:
+translateX(0);
+
+}
+
+/* ==========================================
+SCALE REVEAL
+========================================== */
+
+.reveal-scale{
+
+opacity:0;
+
+transform:
+scale(.8);
+
+transition:
+.8s ease;
+
+}
+
+.reveal-scale.active{
+
+opacity:1;
+
+transform:
+scale(1);
+
+}
+
+/* ==========================================
+GLASS CARD HOVER
+========================================== */
+
+.glass{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.glass::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.12),
+transparent
+);
+
+transition:
+.8s ease;
+
+}
+
+.glass:hover::before{
+
+left:100%;
+
+}
+
+/* ==========================================
+3D CARD EFFECT
+========================================== */
+
+.info-card,
+.stat-card,
+.profile-card{
+
+transform-style:
+preserve-3d;
+
+}
+
+.info-card:hover,
+.stat-card:hover{
+
+transform:
+perspective(1000px)
+rotateX(5deg)
+rotateY(8deg)
+translateY(-10px);
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.3);
+
+}
+
+/* ==========================================
+BUTTON SHINE
+========================================== */
+
+.btn{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.btn::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-120%;
+
+width:60%;
+height:100%;
+
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.5),
+transparent
+);
+
+transform:
+skewX(-25deg);
+
+}
+
+.btn:hover::after{
+
+animation:
+shine .9s linear;
+
+}
+
+@keyframes shine{
+
+100%{
+    left:150%;
+}
+
+}
+
+/* ==========================================
+SOCIAL LINK EFFECT
+========================================== */
+
+.social-links a{
+
+position:relative;
+
+}
+
+.social-links a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-4px;
+
+width:0;
+height:2px;
+
+background:var(--accent);
+
+transition:.3s ease;
+
+}
+
+.social-links a:hover::after{
+
+width:100%;
+
+}
+
+/* ==========================================
+NAVBAR EFFECT
+========================================== */
+
+.nav-links a{
+
+position:relative;
+
+}
+
+.nav-links a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-6px;
+
+width:0;
+height:2px;
+
+background:var(--accent);
+
+transition:.3s ease;
+
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+
+width:100%;
+
+}
+
+/* ==========================================
+HERO TITLE GLOW
+========================================== */
+
+.hero-title{
+
+animation:
+titleGlow 4s ease infinite;
+
+}
+
+@keyframes titleGlow{
+
+0%,100%{
+
+    text-shadow:
+    0 0 10px rgba(0,245,255,.25);
+}
+
+50%{
+
+    text-shadow:
+    0 0 25px rgba(0,245,255,.55);
+}
+
+}
+
+/* ==========================================
+STAT NUMBER GLOW
+========================================== */
+
+.stat-card h3{
+
+animation:
+statGlow 3s ease infinite;
+
+}
+
+@keyframes statGlow{
+
+0%,100%{
+
+    text-shadow:
+    0 0 8px rgba(0,245,255,.25);
+}
+
+50%{
+
+    text-shadow:
+    0 0 20px rgba(0,245,255,.7);
+}
+
+}
+
+/* ==========================================
+PAGE LOAD
+========================================== */
+
+body{
+
+animation:
+pageFade 1s ease;
+
+}
+
+@keyframes pageFade{
+
+from{
+
+    opacity:0;
+}
+
+to{
+
+    opacity:1;
+}
+
+}
+
+/* ==========================================
+MOUSE PARALLAX READY
+========================================== */
+
+.parallax{
+
+will-change:
+transform;
+
+}
+
+/* ==========================================
+FLOATING ICON EFFECT
+========================================== */
+
+.float-icon{
+
+animation:
+floatIcon 4s ease-in-out infinite;
+
+}
+
+@keyframes floatIcon{
+
+0%,100%{
+
+    transform:
+    translateY(0);
+}
+
+50%{
+
+    transform:
+    translateY(-12px);
+}
+
+}
+
+/* ==========================================
+PERFORMANCE
+========================================== */
+
+.reveal,
+.profile-card,
+.info-card,
+.stat-card,
+.floating-shape{
+
+will-change:
+transform;
+
+}
