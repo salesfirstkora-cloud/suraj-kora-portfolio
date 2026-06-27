@@ -286,7 +286,7 @@ function initTiltCards(){
 
 const cards =
 document.querySelectorAll(
-    ".glass"
+    ".glass:not(.form-card)"
 );
 
 cards.forEach(card => {
